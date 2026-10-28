@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagat Saji</title>
+
+    <!-- Ikon sosial media (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ===== RESET & DASAR ===== */
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+        }
+
+        .wrapper {
+            width: 1000px;
+            max-width: 95%;
+            margin: auto;
+        }
+
+        /* ===== NAVBAR ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #1f2937;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            height: 85px;
+        }
+
+        .logo {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 26px;
+        }
+
+        .menu a {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-right img {
+            width: 22px;
+            height: auto;
+        }
+
+        a.order {
+            background: #e0a050;
+            border-radius: 20px;
+            padding: 10px 18px;
+            color: #fff;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        a.order:hover {
+            background: #c99650;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 60px 0 50px;
+        }
+
+        .kolom {
+            flex: 1;
+        }
+
+        .kolom h2 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 48px;
+            line-height: 1.15;
+            color: #c49a7a;
+            margin-bottom: 25px;
+        }
+
+        .kolom .deskripsi {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 26px;
+            color: #333;
+            text-align: justify;
+            margin-bottom: 14px;
+        }
+
+        a.reservasi {
+            display: inline-block;
+            margin-top: 20px;
+            background: #e0b070;
+            border-radius: 25px;
+            padding: 14px 28px;
+            color: #fff;
+            font-family: Georgia, serif;
+            font-weight: bold;
+        }
+
+        a.reservasi:hover {
+            background: #c99650;
+        }
+
+        .gambar {
+            flex: 1;
+            width: 50%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ===== PILIHAN MENU ===== */
+        .pilihan-menu {
+            margin-top: 20px;
+            padding-bottom: 60px;
+        }
+
+        .garis {
+            border: none;
+            border-top: 1px solid #bbb;
+            margin-bottom: 30px;
+        }
+
+        .pilihan-menu h2 {
+            text-align: center;
+            font-size: 35px;
+            color: #e9a05a;
+            margin-bottom: 40px;
+            font-family: Georgia, serif;
+        }
+
+        .daftar-menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .card-menu {
+            background-color: #f4c58d;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+            transition: 0.3s;
+        }
+
+        .card-menu:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-menu img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .card-menu h3 {
+            font-size: 22px;
+            font-family: Georgia, serif;
+            color: #111;
+            margin-bottom: 12px;
+        }
+
+        .card-menu p {
+            font-family: 'Times New Roman', serif;
+            font-size: 15px;
+            line-height: 21px;
+            color: #24180d;
+            text-align: center;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #0b110d;
+            color: white;
+            padding: 45px 0 25px;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            width: 1000px;
+            max-width: 95%;
+            margin: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .footer-box {
+            text-align: center;
+        }
+
+        .footer-box h3 {
+            font-size: 23px;
+            font-family: Georgia, serif;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-box p {
+            color: #eee;
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+        .sosmed {
+            margin-top: 15px;
+        }
+
+        .sosmed a {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        .sosmed i {
+            font-size: 25px;
+            color: white;
+        }
+
+        .sosmed a:hover i {
+            color: orange;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #ddd;
+            font-family: 'Times New Roman', serif;
+            font-size: 15px;
+            margin-top: 30px;
+        }
+
+        /* ===== RESPONSIVE (TABLET & HP) ===== */
+        @media screen and (max-width: 768px) {
+            .nav-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 12px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 30px 0;
+            }
+
+            .kolom h2 {
+                font-size: 32px;
+            }
+
+            .gambar {
+                width: 100%;
+                height: 240px;
+            }
+
+            .daftar-menu {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                padding: 0;
+            }
+
+            .card-menu {
+                padding: 12px;
+            }
+
+            .card-menu img {
+                height: 140px;
+            }
+
+            .card-menu h3 {
+                font-size: 18px;
+            }
+
+            .card-menu p {
+                font-size: 13px;
+            }
+
+            .pilihan-menu h2 {
+                font-size: 29px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            .daftar-menu {
+                grid-template-columns: 1fr;
+            }
+
+            .card-menu {
+                padding: 18px;
+            }
+
+            .card-menu img {
+                height: 220px;
+            }
+
+            .card-menu p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav>
+        <div class="nav-inner">
+            <a href="#home" class="logo">JagatSaji</a>
+
+            <ul class="menu">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#online">Menu</a></li>
+                <li><a href="#offline">Rekanan</a></li>
+                <li><a href="#partner">Hubungi Kami</a></li>
+            </ul>
+
+            <div class="nav-right">
+                <img src="scc.png" alt="Cari">
+                <img src="kontak.jpg" alt="Akun">
+                <img src="buy.jpg" alt="Keranjang">
+                <a href="#online" class="order">Pesan Di sini</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <div class="wrapper">
+        <section id="home" class="hero">
+            <div class="kolom">
+                <h2>Sajian Masakan Indonesia</h2>
+
+                <p class="deskripsi">
+                    Nikmati kelezatan resep warisan leluhur yang diolah dari bumbu rempah pilihan.
+                    Dari Sabang sampai Merauke, kami menghadirkan kehangatan tradisi Indonesia
+                    langsung ke meja makan Anda.
+                </p>
+
+                <p class="deskripsi">
+                    Jagat Saji, Ruang Kuliner Nusantara dengan keaslian rempah, kehangatan bahan,
+                    dan kehangatan tradisi dalam setiap sajian. Pesan sekarang dan nikmati
+                    kelezatan masakan khas Indonesia!
+                </p>
+
+                <a href="#online" class="reservasi">Pesan Sekarang</a>
+            </div>
+
+            <img src="tumpeng.jpg" class="gambar" alt="Masakan Nusantara">
+        </section>
+    </div>
+
+    <!-- ===== PILIHAN MENU ===== -->
+    <div class="wrapper pilihan-menu" id="online">
+        <hr class="garis">
+        <h2>Pilihan Menu</h2>
+
+        <div class="daftar-menu">
+
+            <div class="card-menu">
+                <img src="tumpeng.jpg" alt="Nasi Kuning">
+                <h3>Nasi Kuning</h3>
+                <p>
+                    Memiliki cita rasa yang gurih dengan aroma kuning kunyit,
+                    memiliki keunikan dan identitas tersendiri.
+                </p>
+            </div>
+
+            <div class="card-menu">
+                <img src="gado.jpg" alt="Gado-gado">
+                <h3>Gado-gado</h3>
+                <p>
+                    Salah satu makanan khas Indonesia yang terdiri dari aneka sayuran
+                    yang direbus dan disiram dengan saus kacang.
+                </p>
+            </div>
+
+            <div class="card-menu">
+                <img src="tumpeng.jpg" alt="Nasi Uduk">
+                <h3>Nasi Uduk</h3>
+                <p>
+                    Nasi Uduk adalah salah satu hidangan khas Betawi (Jakarta)
+                    yang terkenal dari beras yang dimasak menggunakan santan dan rempah.
+                </p>
+            </div>
+
+            <div class="card-menu">
+                <img src="tumpeng.jpg" alt="Nasi Daun Jeruk">
+                <h3>Nasi Daun Jeruk</h3>
+                <p>
+                    Nasi Daun Jeruk adalah salah satu menu olahan nasi khas Indonesia
+                    yang terkenal dengan keharuman aromanya yang segar dan cita rasanya yang gurih.
+                </p>
+            </div>
+
+            <div class="card-menu">
+                <img src="pecel.jpg" alt="Nasi Pecel">
+                <h3>Nasi Pecel</h3>
+                <p>
+                    Nasi Pecel berupa nasi putih yang disajikan dengan aneka
+                    sayuran rebus lalu disiram bumbu sambal kacang.
+                </p>
+            </div>
+
+            <div class="card-menu">
+                <img src="gado.jpg" alt="Rujak Cingur">
+                <h3>Rujak Cingur</h3>
+                <p>
+                    Rujak Cingur merupakan salah satu makanan tradisional khas
+                    Jawa Timur yang terkenal dengan perpaduan rasa gurih,
+                    pedas, manis, dan sedikit asam.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="partner">
+        <div class="footer-container">
+            <div class="footer-content">
+
+                <div class="footer-box">
+                    <h3>Contact Us</h3>
+                    <p>Location in skaneda</p>
+                    <p>WA: 08111122234</p>
+                    <p>JagatSaji@gmail.com</p>
+                </div>
+
+                <div class="footer-box" id="offline">
+                    <h3>JagatSaji</h3>
+                    <p>Kuliner SMK Negeri 2 Mojokerto</p>
+
+                    <div class="sosmed">
+                        <a href="https://facebook.com" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="https://instagram.com" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://twitter.com" aria-label="Twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-box">
+                    <h3>Opening Hours</h3>
+                    <p>Everyday 10.00 Am - 18.00 Pm</p>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 All Rights Reserved By rpl_skaneda Kiarda Fauzian
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+  </html>
+  
